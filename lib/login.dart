@@ -14,6 +14,8 @@
 
 import 'package:flutter/material.dart';
 
+import 'colors.dart';
+
 class LoginPage extends StatefulWidget {
   const LoginPage({Key? key}) : super(key: key);
 
@@ -28,7 +30,6 @@ class _LoginPageState extends State<LoginPage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: const Color(0xFFe2f8fa),
       body: SafeArea(
         child: ListView(
           padding: const EdgeInsets.symmetric(horizontal: 24.0),
@@ -38,32 +39,27 @@ class _LoginPageState extends State<LoginPage> {
               children: <Widget>[
                 Image.asset('ruanmei.png'),
                 const SizedBox(height: 16.0),
-                const Text('RuanMei Wares'),
+                Text('RuanMei Wares', style: Theme.of(context).textTheme.headlineSmall,
+                ),
               ],
             ),
             const SizedBox(height: 60.0),
-            // TODO: Remove filled: true values (103)
-            // [Name]
             TextField(
               controller: _usernameController,
-              decoration: InputDecoration(
-                fillColor: Color(0xFF4b454f),
-                filled: true,
+              decoration: const InputDecoration(
+                // Removed filled: true
                 labelText: 'Username',
-                labelStyle: TextStyle(color: Colors.white),
               ),
+              style: const TextStyle(color: ruanMeiBlack)
             ),
-            // spacer
-            const SizedBox(height: 60.0),
-            // [Password]
+            const SizedBox(height: 12.0),
             TextField(
               controller: _passwordController,
-              decoration: InputDecoration(
-                fillColor: Color(0xFF4b454f),
-                filled: true,
+              decoration: const InputDecoration(
+                // Removed filled: true
                 labelText: 'Password',
-                labelStyle: TextStyle(color: Colors.white),
               ),
+              style: const TextStyle(color: ruanMeiBlack),
               obscureText: true,
             ),
             const SizedBox(height: 30.0),
@@ -73,23 +69,28 @@ class _LoginPageState extends State<LoginPage> {
               children: <Widget>[
                 TextButton(
                   child: const Text('CANCEL'),
-                  style: TextButton.styleFrom(
-                    foregroundColor: Colors.white,   // text color
-                    backgroundColor: Color(0xFF4b454f) // background color
-                  ),
                   onPressed: () {
                     _usernameController.clear();
                     _passwordController.clear();
                   },
+                  style: TextButton.styleFrom(
+                    foregroundColor: Theme.of(context).colorScheme.primary,
+                    shape: const BeveledRectangleBorder(
+                      borderRadius: BorderRadius.all(Radius.circular(7.0)),
+                    ),
+                  ),
                 ),
                 const SizedBox(width: 16.0),
-                // TODO: Add an elevation to NEXT (103)
                 // TODO: Add a beveled rectangular border to NEXT (103)
                 ElevatedButton(
                   child: const Text('NEXT'),
                   style: TextButton.styleFrom(
-                    foregroundColor: Colors.white,   // text color
-                    backgroundColor: Color(0xFF4b454f) // background color
+                    backgroundColor: Color(0xFF4b454f) ,// background color
+                    foregroundColor: ruanMeiWhite,
+                    elevation: 8.0,
+                    shape: const BeveledRectangleBorder(
+                      borderRadius: BorderRadius.all(Radius.circular(7.0)),
+                    ),
                   ),
                   onPressed: () {
                     Navigator.pop(context);

@@ -13,9 +13,11 @@
 // limitations under the License.
 
 import 'package:flutter/material.dart';
+import 'package:shrine/supplemental/cut_corners_border.dart';
 
 import 'home.dart';
 import 'login.dart';
+import 'colors.dart';
 
 // TODO: Convert ShrineApp to stateful widget (104)
 class ShrineApp extends StatelessWidget {
@@ -35,10 +37,68 @@ class ShrineApp extends StatelessWidget {
         // TODO: Change backLayer field value to CategoryMenuPage (104)
       },
       // TODO: Customize the theme (103)
-      theme: ThemeData.light(useMaterial3: true),
+      theme: _kShrineTheme,
     );
   }
 }
 
 // TODO: Build a Shrine Theme (103)
-// TODO: Build a Shrine Text Theme (103)
+final ThemeData _kShrineTheme = _buildShrineTheme();
+
+ThemeData _buildShrineTheme() {
+  final ThemeData base = ThemeData.light(useMaterial3: true);
+  return base.copyWith(
+    colorScheme: base.colorScheme.copyWith(
+      primary: ruanMeiBlack,
+      onPrimary: ruanMeiBlack,
+      secondary: ruanMei1,
+      error: ruanMeiBlack,
+    ),
+    scaffoldBackgroundColor: ruanMei1,
+    textSelectionTheme: const TextSelectionThemeData(
+      selectionColor: ruanMeiBlack
+    ),
+    appBarTheme: const AppBarTheme(
+      foregroundColor: ruanMeiWhite,
+      backgroundColor: ruanMeiBlack,
+    ),
+    inputDecorationTheme: const InputDecorationTheme(
+      border: CutCornersBorder(),
+      focusedBorder: CutCornersBorder(
+        borderSide: BorderSide(
+          width: 2.0,
+          color: ruanMeiBlack,
+        ),
+      ),
+      floatingLabelStyle: TextStyle(
+        color: ruanMeiBlack,
+      ),
+    ),
+  );
+}
+
+TextTheme _buildShrineTextTheme(TextTheme base) {
+  return base.copyWith(
+    headlineSmall: base.headlineSmall?.copyWith(
+      fontWeight: FontWeight.w500,
+      fontFamily: 'Rubik',
+    ),
+    titleLarge: base.titleLarge?.copyWith(
+      fontSize: 18.0,
+      fontFamily: 'Rubik',
+    ),
+    bodySmall: base.bodySmall?.copyWith(
+      fontWeight: FontWeight.w400,
+      fontSize: 14.0,
+      fontFamily: 'Rubik',
+    ),
+    bodyLarge: base.bodyLarge?.copyWith(
+      fontWeight: FontWeight.w500,
+      fontSize: 16.0,
+      fontFamily: 'Rubik',
+    ),
+  ).apply(
+    displayColor: ruanMeiBlack,
+    bodyColor: ruanMeiBlack,
+  );
+}
