@@ -32,7 +32,7 @@ class Product {
   final int id;
   final bool isFeatured;
   final String name;
-  final int price;
+  final double price;
 
   String get assetName => 'assets/$id.png';
   String? get assetPackage => null;

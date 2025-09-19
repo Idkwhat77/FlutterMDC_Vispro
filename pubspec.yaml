@@ -37,7 +37,7 @@ flutter:
     - assets/7.png
     - assets/8.png
     - assets/9.png
-    # TODO: Add slanted menu asset (104)
+    - assets/slanted_menu.png
     - packages/shrine_images/0-0.jpg
     - packages/shrine_images/1-0.jpg
     - packages/shrine_images/2-0.jpg
