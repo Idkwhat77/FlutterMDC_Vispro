@@ -14,6 +14,7 @@
 
 import 'package:flutter/material.dart';
 
+import 'colors.dart';
 import 'model/product.dart';
 import 'model/products_repository.dart';
 import 'supplemental/asymmetric_view.dart';

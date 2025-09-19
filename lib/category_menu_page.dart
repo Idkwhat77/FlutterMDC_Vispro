@@ -27,14 +27,14 @@ class CategoryMenuPage extends StatelessWidget {
               const SizedBox(height: 16.0),
               Text(
                 categoryString,
-                style: theme.textTheme.bodyLarge,
+                style: theme.textTheme.bodyLarge!.copyWith(color: ruanMei1),
                 textAlign: TextAlign.center,
               ),
               const SizedBox(height: 14.0),
               Container(
                 width: 70.0,
                 height: 2.0,
-                color: ruanMeiBlack,
+                color: ruanMei1,
               ),
             ],
           )

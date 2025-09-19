@@ -14,9 +14,10 @@
 
 enum Category {
   all,
-  accessories,
-  clothing,
-  home,
+  cake,
+  eidolon,
+  lightcone,
+  others,
 }
 
 class Product {

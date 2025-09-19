@@ -37,7 +37,7 @@ class _LoginPageState extends State<LoginPage> {
             const SizedBox(height: 80.0),
             Column(
               children: <Widget>[
-                Image.asset('ruanmei.png'),
+                Image.asset('assets/ruanmei.png'),
                 const SizedBox(height: 16.0),
                 Text('RuanMei Wares', style: Theme.of(context).textTheme.headlineSmall,
                 ),

@@ -145,7 +145,7 @@ class _BackdropTitle extends AnimatedWidget {
 
 class _BackdropState extends State<Backdrop>
     with SingleTickerProviderStateMixin {
-  final GlobalKey _backdropKey = GlobalKey(debugLabel: 'Backdrop');
+  // Removed GlobalKey _backdropKey; not needed
   late AnimationController _controller;
 
   @override
@@ -197,7 +197,7 @@ class _BackdropState extends State<Backdrop>
     ).animate(_controller.view);
 
     return Stack(
-      key: _backdropKey,
+      // Removed key: _backdropKey
       children: <Widget>[
         ExcludeSemantics(
           child: widget.backLayer,

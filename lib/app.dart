@@ -49,7 +49,10 @@ class _ShrineAppState extends State<ShrineApp> {
         '/': (BuildContext context) => Backdrop(
           // TODO: Make currentCategory field take _currentCategory (104)
           currentCategory: _currentCategory,
-          frontLayer: HomePage(category: _currentCategory),
+          frontLayer: HomePage(
+            key: ValueKey(_currentCategory),
+            category: _currentCategory,
+          ),
           // TODO: Change backLayer field value to CategoryMenuPage (104)
           backLayer: CategoryMenuPage(
             currentCategory: _currentCategory,
@@ -58,6 +61,7 @@ class _ShrineAppState extends State<ShrineApp> {
           frontTitle: const Text('WARES!!!', style: TextStyle(color: Colors.white)),
           backTitle: const Text('MENU', style: TextStyle(color: Colors.white)),
         ),
+        '/login': (BuildContext context) => const LoginPage(),
       },
       // TODO: Customize the theme (103)
       theme: _kShrineTheme,
